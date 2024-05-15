@@ -3,8 +3,20 @@ body{
     color: white; /* this changes the color of the text */
 }
 .container{
-    margin: 12%;
+    margin: 12%; /* spacing on the lefy */
     width: 90%; /* for some spacing */
     max-width: 700px;
 
+}
+.display{
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background: #fff;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 20px; /* space inside box*/
+    border-radius: 5px; /* makes corners round */
 }
