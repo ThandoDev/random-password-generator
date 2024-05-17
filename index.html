@@ -11,7 +11,7 @@
         <h1> Generate <br><span>Random Password</span></h1> <!--added a span to STYLE part of the h1 properly on the css-->
         <div class="display">
         <input type="text" id="password" placeholder="Password">
-<img src="images/copy.png">
+<img src="images/copy.png" onclick="copyPassword()">
         </div>
         <button onclick="createPassword()"> <img src="images/generate.png">Generate Password</button> <!--added a function that when you click it will generate a new password-->
     </div>
@@ -42,6 +42,11 @@ while(length > password.length){
     password += allChars[Math.floor(Math.random() * allChars.length)];
 }
 passwordBox.value = password; // iw will display password in the input box //
+}
+
+function copyPassword(){
+    passwordBox.select();
+    document.execCommand("copy"); // this will help to copy the password //
 }
 
 </script>
