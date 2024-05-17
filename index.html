@@ -13,7 +13,7 @@
         <input type="text" id="password" placeholder="Password">
 <img src="images/copy.png">
         </div>
-        <button> <img src="images/generate.png">Generate Password</button>
+        <button onclick="createPassword()"> <img src="images/generate.png">Generate Password</button> <!--added a function that when you click it will generate a new password-->
     </div>
 
     <script>
@@ -26,14 +26,23 @@ const lowerCase = "abcdefghijklmnopqrstuvwxyz";
 const number = "0123456789";
 const symbols = "@#$%^&*()";
 
+        const allChars = upperCase + lowerCase + number +  symbols;
+
 // NOW WE ARE ADDING THE FUNCTION //
 
 function createPassword(){
-    let password = "";
-    password += upperCase[Math.floor(Math.random() * upperCase.length)]
-}password += lowerCase[Math.floor(Math.random() * lowerCase.length)]
-password += number[Math.floor(Math.random() * number.length)]
+    let password = ""; // password variable that is empty //
+    password += upperCase[Math.floor(Math.random() * upperCase.length)] // adding this value to the password //
+password += lowerCase[Math.floor(Math.random() * lowerCase.length)] // random it will get any random alphabet //
+password += number[Math.floor(Math.random() * number.length)] // also added length so it will be the length we specified 8!! //
 password += symbols[Math.floor(Math.random() * symbols.length)]
+
+// IF LENGTH IS LONGER THAN THE PREVIOUS PASSWORD LENGHT HICH IS 4, WE WILL ADD THESE //
+while(length > password.length){
+    password += allChars[Math.floor(Math.random() * allChars.length)];
+}
+passwordBox.value = password; // iw will display password in the input box //
+}
 
 </script>
     
